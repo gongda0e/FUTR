@@ -15,6 +15,25 @@ This repository contains the official source code and data for our paper:
 <img src="pipeline.png" alt="An Overview of the proposed pipeline"/>
 </div>
 
+## Citation
+If you find our code or paper useful, please consider citing our paper:
+```BibTeX
+@inproceedings{gong2022future,
+  title={Future Transformer for Long-term Action Anticipation},
+  author={Gong, Dayoung and Lee, Joonseok and Kim, Manjin and Ha, Seong Jong and Cho, Minsu},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={3052--3061},
+  year={2022}
+}
+```
+
+## Experiments
+We conduct experiments on Breakfast with 4 splits and 50Salads with 5 splits.
+
+|Dataset| Model |obs 0.2, pred 0.1|obs 0.2, pred 0.2|obs 0.2, pred 0.3|obs 0.2, pred 0.4|obs 0.3, pred 0.1|obs 0.3, pred 0.2|obs 0.3, pred 0.3|obs 0.3, pred 0.4| Checkpoint (Splits) |
+|-------|-------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|
+|Breakfast|FUTR|27.70|24.55|22.83|22.04|32.27|29.88|27.49|25.87| [1](https://postechackr-my.sharepoint.com/:u:/g/personal/gongda0e_postech_ac_kr/EUzTN0ybDthAua4v7VDR_8YBPr77nRqodpN0_8p2OuugNg?e=OKs8uY) [2](https://postechackr-my.sharepoint.com/:u:/g/personal/gongda0e_postech_ac_kr/EdfDn5KOEUVMqeOWd7_96JEBxMT8ALMxWtTRZcTMdlAVTA?e=gCiraz) [3](https://postechackr-my.sharepoint.com/:u:/g/personal/gongda0e_postech_ac_kr/ETSklysI9F5Ju9W2se6RwzkBlJfW89-MMtkv955geb48ng?e=MvAVZy) [4](https://postechackr-my.sharepoint.com/:u:/g/personal/gongda0e_postech_ac_kr/EfYdskp5XFROr6IL0LywKiAB2eT1CHq7mh5oEsjSN9ACPQ?e=9ESCPj)|
+|50Salads|FUTR|39.55|27.54|23.31|17.77|35.15|24.86|24.22|15.26| [1](https://postechackr-my.sharepoint.com/:u:/g/personal/gongda0e_postech_ac_kr/EQJoAF7MSZxGltJ82ylbxoQBtBDMwxMxSn7bfi0z0rv1Bg?e=ogkqhe) [2](https://postechackr-my.sharepoint.com/:u:/g/personal/gongda0e_postech_ac_kr/EQ1rfz2VcAlOg6gxBn87eAkBhfptxrplZWW3_fkWfO3ftg?e=HZ6b71) [3](https://postechackr-my.sharepoint.com/:u:/g/personal/gongda0e_postech_ac_kr/EdgtGzn8jxhEpWsPE_KjQSEBfwq6EH1Sb4yZZU6KPUpFcg?e=6Hlucm) [4](https://postechackr-my.sharepoint.com/:u:/g/personal/gongda0e_postech_ac_kr/EV_3uQ-GCh1KnRXJhX4zWacBdIOouDW4soJDLzKFFjaYgA?e=zMl2Ss) [5](https://postechackr-my.sharepoint.com/:u:/g/personal/gongda0e_postech_ac_kr/EUfzEKbXHHtBuVceoCau6i4BGY1HhqADbXClSd5ne8YxmA?e=IdmzhR)|
 
 
 ## Environmental setup
@@ -41,10 +60,12 @@ Create a directory './datasets' for the two datasets and place each dataset to h
         ├── breakfast/          # Breakfast dataset
         │   ├── groundTruth/
         │   ├── features/
+        │   ├── mapping.txt
         │   └── ...
         ├── 50salads/          # 50salads dataset
         │   ├── groundTruth/
         │   ├── features/
+        │   ├── mapping.txt
         │   └── ...
 ```
 
@@ -70,14 +91,7 @@ Create a directory './datasets' for the two datasets and place each dataset to h
 >./scripts/50s_predict.sh $split_num
 >```
 
-## Citation
-If you find our code or paper useful, please consider citing our paper:
-```BibTeX
-@inproceedings{gong2022future,
-  title={Future Transformer for Long-term Action Anticipation},
-  author={Gong, Dayoung and Lee, Joonseok and Kim, Manjin and Ha, Seong Jong and Cho, Minsu},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={3052--3061},
-  year={2022}
-}
-```
+
+
+## Acknowledgement
+We thank [Yazan Abu Farha](https://scholar.google.com/citations?user=fSdpG-0AAAAJ&hl=en) for providing the code of [Long-term anticipation of activities with cycle consistency](https://arxiv.org/abs/2009.01142) and for helping us to reproduce experiments.
