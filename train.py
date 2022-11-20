@@ -16,16 +16,9 @@ def train(args, model, train_loader, optimizer, scheduler, criterion,  model_sav
         epoch_loss = 0
         epoch_loss_class = 0
         epoch_loss_dur = 0
-        epoch_loss_act = 0
         epoch_loss_seg = 0
         total_class = 0
         total_class_correct = 0
-        total_correct_action = 0
-        total_action = 0
-        total_sequence = 0
-        total_sequence_correct = 0
-        total_act = 0
-        total_act_correct = 0
         total_seg = 0
         total_seg_correct = 0
         for i, data in enumerate(train_loader):
