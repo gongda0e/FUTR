@@ -63,8 +63,8 @@ def main():
     video_file = open(video_file_path, 'r')
     video_file_test = open(video_file_test_path, 'r')
 
-    video_list = video_file.read().split('\n')[1:-1]
-    video_test_list = video_file_test.read().split('\n')[1:-1]
+    video_list = video_file.read().split('\n')[:-1]
+    video_test_list = video_file_test.read().split('\n')[:-1]
 
     features_path = os.path.join(data_path, 'features')
     gt_path = os.path.join(data_path, 'groundTruth')
